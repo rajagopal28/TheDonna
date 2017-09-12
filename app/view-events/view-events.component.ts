@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChoresDataService } from '../services/chores-data.service';
 import { SessionService } from '../services/session-service';
 
-import { Event } from '../models/app.models';
+import { Event, CommonUtils } from '../models/app.models';
 
 @Component({
   selector: 'ViewEvents',
@@ -34,6 +34,9 @@ export class ViewEventsComponent implements OnInit {
       error => console.log(error),
       () => console.log('C0mpleted!')
     );
+  }
+  getDateString(timestamp: number) : string {
+    return CommonUtils.getStringFromTimestamp(timestamp);
   }
 
   ngOnInit() {

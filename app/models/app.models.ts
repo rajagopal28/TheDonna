@@ -1,4 +1,3 @@
-import { Component } from '@angular/core';
 export class Location {
    id: number;
    latitude: number;
@@ -66,4 +65,40 @@ export class Announcement {
   validTill: number;
   category: string;
   id: number;
+}
+
+export class CommonUtils {
+  private static monthNames :[string] = [
+    "January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December"
+  ];
+  private static DATE_SEPERATOR : string = '-';
+  private static TIME_SEPERATOR : string = ':';
+  private static BLANK : string = ' ';
+
+  public static getStringFromTimestamp(timestamp: number) : string {
+    let d = new Date(timestamp);
+
+      let day = d.getDate();
+      let monthIndex = d.getMonth();
+      let year = d.getFullYear();
+      let h = d.getHours();
+      let hours = h>12 ? (h-12) : h;
+      let mins = d.getMinutes();
+      let ordinal = h>=12 ? 'PM' : 'AM';
+
+      return day
+      + CommonUtils.DATE_SEPERATOR
+      + CommonUtils.monthNames[monthIndex]
+      + CommonUtils.DATE_SEPERATOR
+      + year
+      + CommonUtils.BLANK
+      + hours
+      + CommonUtils.TIME_SEPERATOR
+      + mins
+      + CommonUtils.BLANK
+      + ordinal;
+  }
 }

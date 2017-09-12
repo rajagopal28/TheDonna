@@ -5,8 +5,8 @@
           <StackLayout [class.odd]="odd" [class.even]="even" class="list-group-item">
               <Label [text]='"Title: " +event.title'></Label>
               <Label [text]='"Description: "+ event.description' textWrap="true" class="title"></Label>
-              <Label [text]='"Event Start: "+ event.eventStart' class="date"></Label>
-              <Label [text]='"Event End: "+ event.eventEnd' class="date"></Label>
+              <Label [text]='"Event Start: "+ getDateString(event.eventStart)' class="date"></Label>
+              <Label [text]='"Event End: "+ getDateString(event.eventEnd)' class="date"></Label>
               <StackLayout height="2" backgroundColor="Black"></StackLayout>
           </StackLayout>
       </ng-template>

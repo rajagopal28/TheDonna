@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy  } from '@angular/core';
 import {ChoresDataService} from '../services/chores-data.service';
 
-import {Announcement} from '../models/app.models'
+import {Announcement, CommonUtils} from '../models/app.models'
 
 @Component({
   selector: 'ViewAnnouncements',
@@ -19,7 +19,12 @@ export class ViewAnnouncementsComponent{
       },
       error => console.log(error),
       () => console.log('C0mpleted!')
-    );}
+    );
+  }
+
+  getDateString(timestamp: number) : string {
+    return CommonUtils.getStringFromTimestamp(timestamp);
+  }
 
   public onItemTap(args) {
       console.log("Item Tapped at cell index: " + args.index);
