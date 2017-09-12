@@ -9,7 +9,7 @@ import { Polyline, Position } from "nativescript-google-maps-sdk";
 
 
 const URL : string = 'https://maps.googleapis.com/maps/api/directions/json';
-const DIRECTIONS_API_KEY : string = 'AIzaSyBAom4QZrTR7XbA6TdxLRpzDZMv5fhaaMg';
+const DIRECTIONS_API_KEY : string = '<YOUR_KEY>';
 
 @Injectable()
 export class IndoorLocationDataService {

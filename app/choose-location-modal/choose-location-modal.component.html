@@ -1,5 +1,5 @@
 <StackLayout>
-  <Label text="Choose Location"></Label>
+  <Label class="h1 text-center" text="Choose Location"></Label>
   <ListView [items]="locations" class="list-group">
       <ng-template let-location="item">
           <StackLayout class="list-group-item" (tap)="ok(location)">
