@@ -9,7 +9,7 @@ import { Polyline, Position } from "nativescript-google-maps-sdk";
 
 
 const URL : string = 'https://maps.googleapis.com/maps/api/directions/json';
-const DIRECTIONS_API_KEY : string = '<YOUR_KEY>';
+const DIRECTIONS_API_KEY : string = 'AIzaSyBAom4QZrTR7XbA6TdxLRpzDZMv5fhaaMg';
 
 @Injectable()
 export class IndoorLocationDataService {
@@ -25,21 +25,15 @@ export class IndoorLocationDataService {
   getPolyLineForWayPoint(waypoint) {
     return Position.positionFromLatLng(waypoint.lat, waypoint.lng);
   }
-  getDirectionWayPointsAndLoadPolyLineOptions(params, cb) {
-    console.log('sending params to api...');
-    this.getDirectionWayPoints(params, (response) => {
-      let routes = response.routes;
-      if(routes && routes.length > 0) {
-        cb(this.getPolyLineOptionsFromResponse(routes));
-      }
-    });
-  }
   getDirectionWayPointsAndLoadPolyLineOptionsWithRoute(params, cb) {
     console.log('sending params to api...');
     this.getDirectionWayPoints(params, (response) => {
       let routes = response.routes;
       if(routes && routes.length > 0) {
-        cb(this.getPolyLineOptionsFromResponse(routes), this.getRouteTextFromReponse(response));
+        cb({
+          polylineOptions : this.getPolyLineOptionsFromResponse(routes),
+          routeText: this.getRouteTextFromReponse(response)
+        });
       }
     });
   }
@@ -53,13 +47,6 @@ export class IndoorLocationDataService {
       polyLineOptions.color = new Color("#FF0000");
       polyLineOptions.addPoints(polylinePositions);
       return polyLineOptions;
-  }
-  getRouteText(params, cb) {
-    this.getDirectionWayPoints(params, (response) =>{
-        if(response.routes && response.routes.length >0) {
-          cb(this.getRouteTextFromReponse(response));
-        }
-    });
   }
   getPolyLineOptionsFromResponse(routes) {
     console.log('got routes', routes.length);

@@ -58,9 +58,8 @@ export class IndoorMapComponent implements OnInit {
     }
     getDirections(arg, cb) {
       console.log('getting directions', arg);
-      this.hotSpotService.getDirectionWayPointsAndLoadPolyLineOptionsWithRoute(arg, (result, routeText)=> {
-        console.log('inside promise');
-        cb(result, routeText);
+      this.hotSpotService.getDirectionWayPointsAndLoadPolyLineOptionsWithRoute(arg, (result)=> {
+        cb(result);
       });
     }
 
@@ -117,11 +116,13 @@ export class IndoorMapComponent implements OnInit {
       var marker = this.getMarkerFrom(this.lat, this.lng, text, ' London HA9 0WS, UK');
       mapView.addMarker(marker);
       mapView.updateCamera();
-      this.getDirections(this.p, (result: Polyline, routeText: string) => {
+      this.getDirections(this.p, (response : { polylineOptions: Polyline, routeText: string}) => {
         try {
-            if(result) {
+            if(response && response.polylineOptions && response.routeText) {
+                let polyLineOptions = response.polylineOptions;
+                let routeText = response.routeText;
                 console.log('got android and setting.. Polyline');
-                mapView.addPolyline(result);
+                mapView.addPolyline(polyLineOptions);
 
                 let mark1 = this.p.start.name? this.p.start.name : 'Marker 1';
                 let mark2 = this.p.end.name? this.p.end.name: 'Marker 2';
