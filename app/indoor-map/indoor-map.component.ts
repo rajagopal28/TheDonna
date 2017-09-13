@@ -113,7 +113,7 @@ export class IndoorMapComponent implements OnInit {
       this.lat = this.campus.latitude ? this.campus.latitude : this.lat;
       this.lng = this.campus.longitude ? this.campus.longitude : this.lng;
       let text = this.campus.name? this.campus.name : 'Wembley Stadium';
-      var marker = this.getMarkerFrom(this.lat, this.lng, text, ' London HA9 0WS, UK');
+      var marker = this.getMarkerFrom(this.lat, this.lng, text, 'Campus Centre');
       mapView.addMarker(marker);
       mapView.updateCamera();
       this.getDirections(this.p, (response : { polylineOptions: Polyline, routeText: string}) => {
@@ -131,8 +131,8 @@ export class IndoorMapComponent implements OnInit {
                 let lat2 = this.p.end.latitude? this.p.end.latitude : 51.556049;
                 let lng2 = this.p.end.longitude? this.p.end.longitude : -0.278078;
 
-                let src = this.getMarkerFrom(lat1, lng1, mark1, 'Some snipp1');
-                let dst = this.getMarkerFrom(lat2, lng2, mark2,'Some snipp2');
+                let src = this.getMarkerFrom(lat1, lng1, mark1, 'Starting Location...');
+                let dst = this.getMarkerFrom(lat2, lng2, mark2,'Ending Location...');
                 mapView.addMarker(src);
                 mapView.addMarker(dst);
                 console.log('Adding src dst marker');
