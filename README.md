@@ -4,14 +4,14 @@
 ## Introduction:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Being in a huge corporate world, we often get lost literally. Yeah, most of the tech giants own huge blocks of buildings and they operate in a seamless way, but being humans we often tend to remember all details of what is where in the real world. On a specific note, being at work which involves lots of floors, partitions, and wings, we often wind up moving across various parts of the mazes that we live across. With smart personal assistants, this can very well be addressed by making our workplace a lot easy to move and comfy to work.
 
-Download the mobile application executable  [Here](https://file.ac/G5EImf07QBs/com.nativescript.donna.ai­.apk )
+Download the mobile application executable  [Here](https://github.com/rajagopal28/Donna/blob/master/statics/com.nativescript.donna.ai.apk)
 
 The mobile variant of Donna at the existing Link. Built with nativescript with angular2, google-maps sdk
 The actual parent repo is [HERE](https://github.com/rajagopal28/Donna), the commit histories can be referred from [HERE](https://github.com/rajagopal28/Donna/commits/master)
 Initially this was a part of The parent directory but after the actual changes there were very less code reuse and new UI changes due to google-maps. So I extracted it as a separate project as it has independent logics from Web for most of the UI views.
 
 ## Mobile Block Diagram:
-![Block Diagram](https://file.ac/G5EImf07QBs/image100.png)
+![Block Diagram](./statics/image100.png)
 
 ## Tech Nuances:
  - Native script + angular: Chose native script as I found that there is an Angular2 combination that would help me write less code by reusing whatever I have written in the web UI. However the View part if so different that Native script uses its own UI related tags that I had to rewrite that code by retaining the controller logics the same. It was not difficult as Angular2 is an MVC.
@@ -29,35 +29,41 @@ Initially this was a part of The parent directory but after the actual changes t
 **Maps:** Indoor navigation is the essential concept behind this project. It is deeply tied between the contextual backend as it holds the relevant data. The Mazemap library is used for indoor maps and navigation.
 
 ### Home
-![Home](https://file.ac/G5EImf07QBs/image101.jpg)
+![Home](./statics/image101.jpg)
 
 ### Announcements
-![Announcements](https://file.ac/G5EImf07QBs/image102.jpg)
-![Announcements](https://file.ac/G5EImf07QBs/image103.jpg)
+![Announcements](./statics/image102.jpg)
+![Announcements](./statics/image103.jpg)
 
 ### User Login
-![User Login](https://file.ac/G5EImf07QBs/image104.jpg)
-![User Login](https://file.ac/G5EImf07QBs/image104a.jpg)
+![User Login](./statics/image104.jpg)
+![User Login](./statics/image104a.jpg)
 
 ### ChatBot:
-![ChatBot](https://file.ac/G5EImf07QBs/image105.jpg)
-![ChatBot](https://file.ac/G5EImf07QBs/image106.jpg)
-![ChatBot](https://file.ac/G5EImf07QBs/image107.jpg)
-![ChatBot](https://file.ac/G5EImf07QBs/image108.jpg)
-![ChatBot](https://file.ac/G5EImf07QBs/image109.png)
-![ChatBot](https://file.ac/G5EImf07QBs/image110.png)
+![ChatBot](./statics/image105.jpg)
+![ChatBot](./statics/image106.jpg)
+![ChatBot](./statics/image107.jpg)
+![ChatBot](./statics/image108.jpg)
+![ChatBot](./statics/image109.png)
+![ChatBot](./statics/image110.png)
 
 ### Events:
-![Events](https://file.ac/G5EImf07QBs/image111.jpg)
-![Events](https://file.ac/G5EImf07QBs/image112.jpg)
+![Events](./statics/image111.jpg)
+![Events](./statics/image112.jpg)
 
 ### Maps:
-![Maps](https://file.ac/G5EImf07QBs/image113.png)
-![Maps](https://file.ac/G5EImf07QBs/image114.png)
-![Maps](https://file.ac/G5EImf07QBs/image115.png)
-![Maps](https://file.ac/G5EImf07QBs/image116.png)
-![Maps](https://file.ac/G5EImf07QBs/image117.png)
-![Maps](https://file.ac/G5EImf07QBs/image118.png)
+![Maps](./statics/image113.png)
+![Maps](./statics/image114.png)
+![Maps](./statics/image115.png)
+![Maps](./statics/image116.png)
+![Maps](./statics/image117.png)
+![Maps](./statics/image118.png)
+
+### Shortlisted submission
+- This submission has been shortlisted as top 15 entries to be presented in The Old Trafford Stadium @ Manchester City
+- Team SubtleStorms: https://www.hackerearth.com/challenges/hackathon/unitedbyhcl/dashboard/87c3351/team/
+- Top 15 teams link : https://docs.google.com/spreadsheets/d/1Z-OEfrTSBGy-De-Rjk6MJf12p5gZYKEcFypydzpQkBY/edit#gid=0
+- Demo of video demo: https://www.youtube.com/watch?v=gfLHhX8GDWA
 
 ## References:
 - http://docs.nativescript.org/angular/start/quick-setup
